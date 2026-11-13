@@ -1,0 +1,107 @@
+
+@use "../utilities/variables" as v;
+@use "../utilities/mixins" as m;
+
+.header {
+    background-color: v.$azul-principal;
+
+    .container-fluid {
+        display: flex;
+        flex-direction: column;
+        padding: 0 12px;
+    }
+
+    .header-top {
+        width: 100%;
+        min-height: 60px;
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+    .navbar-brand {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+
+        img {
+            max-width: 150px;
+            height: auto;
+        }
+    }
+
+    .navbar-collapse {
+        width: 100%;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        margin-left: 0;
+        gap: 0;
+        font-size: 18px;
+        font-weight: 700;
+
+        .nav-link {
+            border-radius: 6px;
+            padding: 10px 14px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+
+            &.active {
+                background-color: rgba(169, 219, 41, 0.12);
+                color: v.$verde-principal;
+            }
+        }
+    }
+
+    .navbar-toggler {
+        border: 1px solid v.$verde-principal;
+        border-radius: 8px;
+        padding: 6px 9px;
+
+        &:focus {
+            box-shadow: 0 0 0 2px rgba(169, 219, 41, 0.25);
+        }
+    }
+}
+
+@include m.desktop {
+    .header {
+        .container-fluid {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 24px;
+        }
+
+        .header-top {
+            width: auto;
+            min-height: 60px;
+        }
+
+        .navbar-brand {
+            position: static;
+            transform: none;
+        }
+
+        .navbar-collapse {
+            width: auto;
+        }
+
+        .navbar-nav {
+            flex-direction: row;
+            align-items: center;
+            margin-left: auto;
+            gap: 20px;
+
+            .nav-link {
+                &:hover {
+                    background-color: rgba(169, 219, 41, 0.18);
+                    color: v.$verde-principal;
+                }
+            }
+        }
+    }
+}

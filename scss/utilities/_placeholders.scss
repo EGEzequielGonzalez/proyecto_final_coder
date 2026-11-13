@@ -1,0 +1,22 @@
+
+%contenedor-centrado {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+%titulo-seccion {
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+%tarjeta-base {
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+%transicion-suave {
+    transition: all 0.3s ease;
+}

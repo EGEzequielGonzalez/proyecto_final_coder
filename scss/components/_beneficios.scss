@@ -1,0 +1,109 @@
+
+@use "../utilities/variables" as v;
+@use "../utilities/mixins" as m;
+@use "../utilities/placeholders" as p;
+
+.diferenciales {
+    margin-bottom: 30px;
+
+    h2 {
+        @extend %titulo-seccion;
+        max-width: 320px;
+        margin: 0 auto 5px;
+        text-align: center;
+    }
+
+    .diferenciales-contenedor {
+        position: relative;
+        min-height: 90px;
+        background-color: v.$blanco;
+        border-radius: v.$radio-grande;
+        box-shadow: v.$sombra-suave;
+        max-width: 320px;
+        padding: 8px 15px;
+        margin: 0 auto;
+
+        .beneficio {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            opacity: 0;
+            animation: mostrar-beneficio 8s infinite;
+            width: 100%;
+
+            img {
+                width: 32px;
+                height: 32px;
+                object-fit: contain;
+                flex-shrink: 0;
+            }
+
+            p {
+                margin: 0;
+                font-size: 14px;
+                color: v.$gris-texto;
+                max-width: 210px;
+                font-weight: 600;
+            }
+
+            &:nth-child(1) {
+                animation-delay: 0s;
+            }
+
+            &:nth-child(2) {
+                animation-delay: 2s;
+            }
+
+            &:nth-child(3) {
+                animation-delay: 4s;
+            }
+
+            &:nth-child(4) {
+                animation-delay: 6s;
+            }
+        }
+    }
+}
+
+@keyframes mostrar-beneficio {
+    0%, 20% {
+        opacity: 1;
+    }
+
+    25%, 100% {
+        opacity: 0;
+    }
+}
+
+@include m.tablet {
+    .diferenciales {
+        .diferenciales-contenedor {
+            max-width: 700px;
+            min-height: auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+
+            .beneficio {
+                position: static;
+                opacity: 1;
+                animation: none;
+            }
+        }
+    }
+}
+
+@include m.desktop {
+    .diferenciales {
+        .diferenciales-contenedor {
+            max-width: 1100px;
+            grid-template-columns: repeat(4, 1fr);
+            padding: 25px;
+            gap: 15px;
+        }
+    }
+}

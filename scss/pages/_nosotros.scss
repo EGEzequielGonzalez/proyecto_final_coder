@@ -1,0 +1,490 @@
+
+@use "../utilities/variables" as v;
+@use "../utilities/mixins" as m;
+@use "../utilities/placeholders" as p;
+
+.pagina-nosotros {
+    width: 100%;
+
+    .nosotros-etiqueta {
+        display: inline-block;
+        color: v.$azul-principal;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 1.2px;
+        margin-bottom: 12px;
+    }
+
+    // PRESENTACIÓN
+    .nosotros-presentacion {
+        padding: 45px 15px;
+        text-align: center;
+
+        .nosotros-presentacion-contenido {
+            @extend %contenedor-centrado;
+            max-width: 850px;
+        }
+
+        h1 {
+            color: v.$azul-principal;
+            font-size: 28px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .nosotros-acento {
+            width: 75px;
+            height: 5px;
+            background-color: v.$verde-principal;
+            border-radius: 10px;
+            margin: 15px auto;
+        }
+
+        p {
+            color: v.$gris-texto;
+            max-width: 750px;
+            margin: 0 auto 12px;
+        }
+
+        .nosotros-destacado {
+            color: v.$azul-principal;
+            font-weight: 700;
+            margin-top: 20px;
+        }
+    }
+
+    // ESPECIALIZACIÓN
+    .nosotros-especializacion {
+        background-color: v.$azul-principal;
+        padding: 35px 15px;
+        color: v.$blanco;
+
+        .nosotros-seccion-contenido {
+            @extend %contenedor-centrado;
+            max-width: 1100px;
+        }
+
+        .nosotros-seccion-titulo {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 25px;
+
+            h2 {
+                color: v.$verde-principal;
+                margin-bottom: 12px;
+            }
+
+            p {
+                color: v.$blanco;
+                margin: 0;
+            }
+        }
+
+        .nosotros-areas {
+            @include m.grid(1fr, 15px);
+        }
+
+        .nosotros-area {
+            background-color: v.$blanco;
+            color: v.$azul-principal;
+            border-radius: v.$radio-medio;
+            padding: 20px;
+            min-height: 190px;
+            border-top: 5px solid v.$verde-principal;
+
+            .nosotros-area-numero {
+                color: v.$verde-principal;
+                font-size: 25px;
+                font-weight: 800;
+                margin-bottom: 12px;
+            }
+
+            h3 {
+                font-size: 17px;
+                font-weight: 700;
+                margin-bottom: 10px;
+            }
+
+            p {
+                color: v.$gris-texto;
+                margin: 0;
+            }
+        }
+
+        .nosotros-frase {
+            text-align: center;
+            margin-top: 30px;
+
+            p {
+                color: v.$verde-principal;
+                font-size: 17px;
+                font-weight: 700;
+                margin: 0;
+            }
+        }
+    }
+
+    // METODOLOGÍA
+    .nosotros-metodologia {
+        padding: 40px 15px;
+
+        .nosotros-metodologia-contenido {
+            @extend %contenedor-centrado;
+            max-width: 1050px;
+        }
+
+        .nosotros-metodologia-texto {
+            margin-bottom: 25px;
+
+            h2 {
+                color: v.$azul-principal;
+                margin-bottom: 15px;
+            }
+
+            p {
+                color: v.$gris-texto;
+                margin: 0;
+            }
+        }
+
+        .nosotros-pasos {
+            @include m.flex(column, null, stretch, 15px);
+        }
+
+        .nosotros-paso {
+            @include m.flex(row, flex-start, flex-start, 15px);
+            background-color: v.$blanco;
+            border-radius: v.$radio-medio;
+            padding: 17px;
+            box-shadow: v.$sombra-suave;
+
+            > span {
+                color: v.$azul-principal;
+                background-color: v.$verde-principal;
+                border-radius: 50%;
+                width: 35px;
+                height: 35px;
+                flex-shrink: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 13px;
+                font-weight: 800;
+            }
+
+            h3 {
+                color: v.$azul-principal;
+                font-size: 16px;
+                font-weight: 700;
+                margin-bottom: 5px;
+            }
+
+            p {
+                color: v.$gris-texto;
+                margin: 0;
+            }
+        }
+    }
+
+    // CANALES
+    .nosotros-canales {
+        background-color: v.$blanco;
+        padding: 40px 15px;
+
+        .nosotros-canales-contenido {
+            @extend %contenedor-centrado;
+            max-width: 1100px;
+        }
+
+        .nosotros-seccion-titulo {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 25px;
+
+            h2 {
+                color: v.$azul-principal;
+                margin-bottom: 12px;
+            }
+
+            p {
+                color: v.$gris-texto;
+                margin: 0;
+            }
+        }
+
+        .nosotros-canales-grid {
+            @include m.grid(1fr, 15px);
+        }
+
+        .nosotros-canal {
+            text-align: center;
+            padding: 20px 15px;
+            border: 1px solid rgba(10, 0, 98, 0.1);
+            border-radius: v.$radio-medio;
+            @extend %transicion-suave;
+
+            &:hover {
+                transform: translateY(-5px);
+                box-shadow: v.$sombra-suave;
+            }
+
+            .nosotros-canal-icono {
+                width: 55px;
+                height: 55px;
+                background-color: v.$azul-principal;
+                color: v.$verde-principal;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 15px;
+
+                span {
+                    font-size: 16px;
+                    font-weight: 800;
+                }
+            }
+
+            h3 {
+                color: v.$azul-principal;
+                font-size: 17px;
+                font-weight: 700;
+                margin-bottom: 8px;
+            }
+
+            p {
+                color: v.$gris-texto;
+                margin: 0;
+            }
+        }
+
+        .nosotros-canales-cierre {
+            text-align: center;
+            color: v.$azul-principal;
+            font-weight: 800;
+            font-size: 18px;
+            margin: 25px 0 0;
+        }
+    }
+
+    // ECOSISTEMA TECNOPOR
+    .nosotros-ecosistema {
+        padding: 40px 15px;
+
+        .nosotros-ecosistema-contenido {
+            @extend %contenedor-centrado;
+            max-width: 850px;
+            background-color: v.$azul-principal;
+            color: v.$blanco;
+            padding: 25px;
+            border-radius: v.$radio-grande;
+            text-align: center;
+            box-shadow: v.$sombra-media;
+        }
+
+        .nosotros-etiqueta {
+            color: v.$verde-principal;
+        }
+
+        h2 {
+            color: v.$verde-principal;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: v.$blanco;
+            margin-bottom: 12px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    // CIERRE
+    .nosotros-cierre {
+        background-color: v.$blanco;
+        padding: 40px 15px;
+        text-align: center;
+
+        .nosotros-cierre-contenido {
+            @extend %contenedor-centrado;
+            max-width: 800px;
+        }
+
+        h2 {
+            color: v.$azul-principal;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: v.$gris-texto;
+            margin-bottom: 12px;
+        }
+
+        .btn {
+            margin-top: 12px;
+            padding: 10px 22px;
+        }
+    }
+}
+
+// TABLET
+@include m.tablet {
+    .pagina-nosotros {
+
+        .nosotros-presentacion {
+            padding: 55px 25px;
+
+            h1 {
+                font-size: 34px;
+            }
+        }
+
+        .nosotros-especializacion {
+            padding: 45px 25px;
+
+            .nosotros-areas {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+
+        .nosotros-metodologia {
+            padding: 50px 25px;
+        }
+
+        .nosotros-canales {
+            padding: 50px 25px;
+
+            .nosotros-canales-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+
+        .nosotros-ecosistema {
+            padding: 50px 25px;
+
+            .nosotros-ecosistema-contenido {
+                padding: 35px;
+            }
+        }
+
+        .nosotros-cierre {
+            padding: 50px 25px;
+        }
+    }
+}
+
+// DESKTOP
+@include m.desktop {
+    .pagina-nosotros {
+
+        .nosotros-presentacion {
+            padding: 65px 25px;
+
+            h1 {
+                font-size: 42px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+
+        .nosotros-especializacion {
+            padding: 55px 25px;
+
+            .nosotros-seccion-titulo {
+                margin-bottom: 35px;
+
+                h2 {
+                    font-size: 30px;
+                }
+            }
+
+            .nosotros-areas {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+            }
+
+            .nosotros-area {
+                padding: 25px;
+                transition: transform 0.3s ease;
+
+                &:hover {
+                    transform: translateY(-6px);
+                }
+            }
+        }
+
+        .nosotros-metodologia {
+            padding: 65px 25px;
+
+            .nosotros-metodologia-contenido {
+                display: grid;
+                grid-template-columns: 0.9fr 1.1fr;
+                gap: 60px;
+                align-items: center;
+            }
+
+            .nosotros-metodologia-texto {
+                margin-bottom: 0;
+
+                h2 {
+                    font-size: 30px;
+                }
+            }
+        }
+
+        .nosotros-canales {
+            padding: 65px 25px;
+
+            .nosotros-seccion-titulo {
+                margin-bottom: 35px;
+
+                h2 {
+                    font-size: 30px;
+                }
+            }
+
+            .nosotros-canales-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+            }
+
+            .nosotros-canal {
+                padding: 25px 18px;
+            }
+        }
+
+        .nosotros-ecosistema {
+            padding: 65px 25px;
+
+            .nosotros-ecosistema-contenido {
+                padding: 45px;
+            }
+
+            h2 {
+                font-size: 30px;
+            }
+
+            p {
+                font-size: 15px;
+            }
+        }
+
+        .nosotros-cierre {
+            padding: 65px 25px;
+
+            h2 {
+                font-size: 30px;
+            }
+
+            p {
+                font-size: 15px;
+            }
+        }
+    }
+}

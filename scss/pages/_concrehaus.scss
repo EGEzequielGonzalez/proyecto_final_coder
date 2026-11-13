@@ -1,0 +1,672 @@
+
+// ==========================================
+// PÁGINA CONCREHAUS
+// ==========================================
+
+// COLORES
+$concre-azul: #0a0062;
+$concre-verde: #a9db29;
+$concre-blanco: #ffffff;
+$concre-texto: #777777;
+
+
+// ==========================================
+// CONTENEDOR GENERAL
+// ==========================================
+
+.concrehaus-page {
+    width: 100%;
+    overflow: hidden;
+    font-family: "Montserrat", sans-serif;
+    color: $concre-azul;
+}
+
+
+// ==========================================
+// BANNER PRINCIPAL
+// ==========================================
+
+.concre-banner {
+    position: relative;
+    width: 100%;
+    height: 290px;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+
+    background: $concre-azul;
+
+    .concre-banner-img {
+        position: absolute;
+        inset: 0;
+
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .concre-banner-overlay {
+        position: absolute;
+        inset: 0;
+
+        background: linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.72) 0%,
+            rgba(0, 0, 0, 0.40) 45%,
+            rgba(0, 0, 0, 0.08) 100%
+        );
+    }
+
+    .concre-banner-contenido {
+        position: relative;
+        z-index: 2;
+
+        color: $concre-blanco;
+        padding-top: 10px;
+    }
+
+    .concre-logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 22px;
+
+        .concre-logo-icon {
+            width: 36px;
+            height: 40px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border: 3px solid white;
+            border-radius: 8px;
+
+            font-size: 25px;
+            font-weight: 800;
+            transform: skewY(-5deg);
+        }
+
+        h1 {
+            font-size: 27px;
+            font-weight: 800;
+            margin: 0;
+            line-height: 1.1;
+        }
+
+        p {
+            font-size: 10px;
+            margin: 0;
+            font-weight: 500;
+        }
+    }
+
+    h2 {
+        font-size: 21px;
+        font-weight: 800;
+        margin-bottom: 5px;
+    }
+
+    .concre-banner-descripcion {
+        max-width: 370px;
+        font-size: 15px;
+        line-height: 1.4;
+        margin-bottom: 15px;
+    }
+
+    .concre-banner-botones {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .concre-btn {
+        min-width: 155px;
+        min-height: 36px;
+
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 8px 15px;
+
+        background: $concre-verde;
+        color: $concre-blanco;
+
+        text-decoration: none;
+        font-size: 10px;
+        font-weight: 800;
+        text-align: center;
+
+        border-radius: 5px;
+        transition: 0.3s;
+
+        &:hover {
+            background: $concre-azul;
+            color: $concre-blanco;
+            transform: translateY(-2px);
+        }
+    }
+}
+
+
+// ==========================================
+// BENEFICIOS
+// ==========================================
+
+.concre-beneficios {
+    padding-top: 38px;
+    padding-bottom: 40px;
+
+    > h2 {
+        color: $concre-verde;
+        font-size: 21px;
+        font-weight: 800;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+}
+
+.concre-beneficios-grilla {
+    row-gap: 28px;
+}
+
+.concre-beneficio {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    min-height: 85px;
+
+    .concre-beneficio-icono {
+        flex: 0 0 74px;
+
+        width: 74px;
+        height: 74px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background: $concre-verde;
+        color: $concre-blanco;
+
+        border-radius: 50%;
+
+        svg {
+            width: 58px;
+            height: 58px;
+        }
+    }
+
+    .concre-beneficio-texto {
+        flex: 1;
+
+        h3 {
+            color: $concre-verde;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        p {
+            color: #929292;
+            font-size: 10px;
+            line-height: 1.4;
+            margin: 0;
+            max-width: 190px;
+        }
+    }
+}
+
+
+// ==========================================
+// CÓMO FUNCIONA
+// ==========================================
+
+.concre-funcion {
+    margin-top: 35px;
+    margin-bottom: 70px;
+
+    padding: 40px;
+
+    background: $concre-blanco;
+    border-radius: 18px;
+
+    box-shadow: 0 2px 22px rgba(0, 0, 0, 0.07);
+
+    .concre-funcion-imagen {
+        width: 100%;
+        height: 290px;
+
+        overflow: hidden;
+        border-radius: 15px;
+
+        border: 4px solid #d8edff;
+
+        img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+            object-position: center;
+
+            display: block;
+        }
+    }
+
+    .concre-funcion-texto {
+        padding-left: 15px;
+
+        h2 {
+            color: $concre-azul;
+            font-size: 21px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        p {
+            color: $concre-azul;
+            font-size: 13px;
+            line-height: 1.4;
+            margin-bottom: 14px;
+        }
+    }
+}
+
+
+// ==========================================
+// ECOSISTEMA CONCREHAUS
+// ==========================================
+
+.concre-ecosistema {
+    margin-top: 50px;
+    margin-bottom: 85px;
+
+    padding: 35px;
+
+    background: $concre-blanco;
+    border-radius: 18px;
+
+    box-shadow: 0 2px 22px rgba(0, 0, 0, 0.07);
+
+    .concre-ecosistema-texto {
+        padding: 10px 20px;
+
+        h2 {
+            color: $concre-azul;
+            font-size: 19px;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        .concre-ecosistema-intro {
+            font-size: 13px;
+            line-height: 1.4;
+            margin-bottom: 25px;
+        }
+
+        ul {
+            padding-left: 18px;
+            margin: 0;
+
+            li {
+                color: $concre-azul;
+                font-size: 12px;
+                line-height: 1.4;
+                margin-bottom: 14px;
+                padding-left: 0;
+            }
+        }
+    }
+}
+
+
+// ==========================================
+// FORMULARIO
+// ==========================================
+
+.concre-formulario {
+    width: 100%;
+    max-width: 450px;
+
+    margin-left: auto;
+
+    padding: 22px 25px;
+
+    background: $concre-azul;
+    color: $concre-blanco;
+
+    border-radius: 25px;
+
+    h3 {
+        font-size: 12px;
+        font-weight: 700;
+        margin-bottom: 12px;
+
+        span {
+            font-size: 15px;
+            margin-right: 5px;
+        }
+    }
+
+    .concre-campo {
+        margin-bottom: 10px;
+
+        label {
+            display: block;
+
+            font-size: 9px;
+            font-weight: 700;
+
+            margin-bottom: 5px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            height: 32px;
+
+            padding: 5px 9px;
+
+            background: $concre-blanco;
+            color: $concre-azul;
+
+            border: none;
+            border-radius: 6px;
+
+            outline: none;
+
+            font-family: inherit;
+            font-size: 9px;
+
+            &:focus {
+                box-shadow: 0 0 0 2px $concre-verde;
+            }
+        }
+
+        input[type="file"] {
+            padding: 7px 5px;
+            font-size: 8px;
+            cursor: pointer;
+        }
+
+        input::placeholder {
+            color: #929292;
+        }
+    }
+
+    .concre-formulario-btn {
+        width: 100%;
+        min-height: 35px;
+
+        border: none;
+        border-radius: 6px;
+
+        background: $concre-verde;
+        color: $concre-blanco;
+
+        font-family: inherit;
+        font-size: 10px;
+        font-weight: 800;
+
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+            background: $concre-blanco;
+            color: $concre-azul;
+        }
+    }
+}
+
+
+// ==========================================
+// RESPONSIVE - TABLET
+// ==========================================
+
+@media (max-width: 991px) {
+
+    .concre-banner {
+        height: 270px;
+    }
+
+    .concre-beneficios {
+        padding-top: 35px;
+
+        > h2 {
+            font-size: 19px;
+        }
+    }
+
+    .concre-beneficio {
+        gap: 12px;
+
+        .concre-beneficio-icono {
+            flex-basis: 65px;
+            width: 65px;
+            height: 65px;
+        }
+    }
+
+    .concre-funcion {
+        padding: 30px;
+        margin-bottom: 45px;
+
+        .concre-funcion-imagen {
+            height: 260px;
+        }
+
+        .concre-funcion-texto {
+            padding-left: 0;
+            padding-top: 20px;
+        }
+    }
+
+    .concre-formulario {
+        margin: 25px auto 0;
+    }
+}
+
+
+// ==========================================
+// RESPONSIVE - MOBILE
+// ==========================================
+
+@media (max-width: 767px) {
+
+    // BANNER
+
+    .concre-banner {
+        height: 290px;
+
+        .concre-banner-contenido {
+            padding: 20px;
+        }
+
+        .concre-logo {
+            margin-bottom: 20px;
+
+            h1 {
+                font-size: 23px;
+            }
+        }
+
+        h2 {
+            font-size: 19px;
+        }
+
+        .concre-banner-descripcion {
+            font-size: 13px;
+        }
+
+        .concre-banner-botones {
+            gap: 8px;
+        }
+
+        .concre-btn {
+            min-width: 135px;
+            font-size: 9px;
+        }
+    }
+
+
+    // BENEFICIOS
+
+    .concre-beneficios {
+        padding-top: 30px;
+        padding-bottom: 25px;
+
+        > h2 {
+            font-size: 17px;
+            margin-bottom: 25px;
+        }
+    }
+
+    .concre-beneficios-grilla {
+        row-gap: 22px;
+    }
+
+    .concre-beneficio {
+        min-height: 75px;
+
+        .concre-beneficio-icono {
+            flex-basis: 62px;
+            width: 62px;
+            height: 62px;
+
+            svg {
+                width: 48px;
+                height: 48px;
+            }
+        }
+
+        .concre-beneficio-texto {
+            h3 {
+                font-size: 11px;
+            }
+
+            p {
+                font-size: 10px;
+            }
+        }
+    }
+
+
+    // CÓMO FUNCIONA
+
+    .concre-funcion {
+        margin-top: 20px;
+        margin-bottom: 35px;
+
+        padding: 20px;
+
+        .concre-funcion-imagen {
+            height: 230px;
+        }
+
+        .concre-funcion-texto {
+            padding-top: 20px;
+
+            h2 {
+                font-size: 19px;
+            }
+
+            p {
+                font-size: 12px;
+            }
+        }
+    }
+
+
+    // ECOSISTEMA
+
+    .concre-ecosistema {
+        margin-top: 25px;
+        margin-bottom: 45px;
+
+        padding: 20px;
+
+        .concre-ecosistema-texto {
+            padding: 5px;
+
+            h2 {
+                font-size: 17px;
+            }
+
+            .concre-ecosistema-intro {
+                font-size: 12px;
+            }
+
+            ul li {
+                font-size: 11px;
+                margin-bottom: 12px;
+            }
+        }
+    }
+
+
+    // FORMULARIO
+
+    .concre-formulario {
+        padding: 20px 15px;
+        border-radius: 18px;
+
+        .concre-campo {
+            label {
+                font-size: 8px;
+            }
+
+            input,
+            select {
+                font-size: 8px;
+            }
+        }
+    }
+}
+
+
+// ==========================================
+// RESPONSIVE - MOBILE PEQUEÑO
+// ==========================================
+
+@media (max-width: 380px) {
+
+    .concre-banner {
+        height: 270px;
+
+        h2 {
+            font-size: 17px;
+        }
+
+        .concre-btn {
+            min-width: 120px;
+            font-size: 8px;
+        }
+    }
+
+    .concre-beneficio {
+        gap: 9px;
+
+        .concre-beneficio-icono {
+            flex-basis: 55px;
+            width: 55px;
+            height: 55px;
+        }
+    }
+
+    .concre-funcion {
+        padding: 15px;
+
+        .concre-funcion-imagen {
+            height: 190px;
+        }
+    }
+
+    .concre-ecosistema {
+        padding: 15px;
+    }
+}

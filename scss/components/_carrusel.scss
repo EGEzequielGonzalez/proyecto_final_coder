@@ -1,0 +1,47 @@
+
+@use "../utilities/variables" as v;
+
+.carousel {
+    width: 100%;
+    overflow: hidden;
+
+    .carousel-item {
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+    }
+
+    .carousel-indicators {
+        margin-bottom: 8px;
+
+        button {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            border: 0;
+        }
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 10%;
+        opacity: 0.9;
+    }
+
+    .flecha-carrusel {
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+    }
+}
+
+@media (min-width: 768px) {
+    .carousel {
+        .flecha-carrusel {
+            width: 32px;
+            height: 32px;
+        }
+    }
+}

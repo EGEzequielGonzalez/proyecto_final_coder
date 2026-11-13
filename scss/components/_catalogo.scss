@@ -1,0 +1,73 @@
+
+@use "../utilities/variables" as v;
+@use "../utilities/mixins" as m;
+@use "../utilities/placeholders" as p;
+
+.productos-destacados {
+    background-color: v.$azul-principal;
+    max-width: 380px;
+    margin: 0 auto;
+    padding: 12px 8px;
+    border-radius: 15px;
+
+    h2 {
+        color: v.$verde-principal;
+        text-align: left;
+        margin-bottom: 20px;
+    }
+
+    .productos-contenedor {
+        @include m.grid(1fr, 10px, center);
+    }
+
+    .producto-card {
+        @extend %tarjeta-base;
+        width: 100%;
+        max-width: 350px;
+
+        .card-img-top {
+            height: 200px;
+            object-fit: contain;
+            padding: 8px;
+        }
+    }
+}
+
+@include m.tablet {
+    .productos-destacados {
+        max-width: 700px;
+        padding: 20px;
+        margin: 0 auto;
+
+        .productos-contenedor {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .producto-card {
+            max-width: 280px;
+        }
+    }
+}
+
+@include m.desktop {
+    .productos-destacados {
+        max-width: 1200px;
+        padding: 30px;
+        margin: 0 auto;
+
+        .productos-contenedor {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .producto-card {
+            max-width: none;
+            width: 100%;
+        }
+
+        .card-img-top {
+            height: 180px;
+        }
+    }
+}
